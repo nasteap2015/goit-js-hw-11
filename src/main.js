@@ -17,6 +17,7 @@ export const lightbox = new SimpleLightbox('.gallery-link', {
   captionsDelay: 250,
 });
 export const loader = document.querySelector('.loader');
+loader.setAttribute('hidden', true);
 
 form.addEventListener('submit', event => {
   event.preventDefault();

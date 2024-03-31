@@ -3,7 +3,8 @@
 import { gallery, input, loader } from '../main.js';
 
 export function fetchImg() {
-  loader.setAttribute('hidden', false);
+  loader.hidden = false;
+  console.log(loader);
   gallery.innerHTML = '';
   const options = new URLSearchParams({
     key: '43152818-b9b3fa9adc16b8bb91486a66f',
