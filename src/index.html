@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
   </head>
   <body>
     <form class="searching-form">
-      <label >
-        Enter key: 
-        <input type="text" name="key-word">
+      <label>
+        <input type="text" name="key-word" placeholder="Search images...">
       </label>
-      <ul class="gallery"></ul>
       <button type="submit">Search</button>
     </form>
+    <span class="loader"></span>
+    <ul class="gallery"></ul>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

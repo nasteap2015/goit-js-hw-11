@@ -7,11 +7,14 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import { fetchImg } from './js/pixabay-api.js';
+import { renderImg } from './js/render-functions.js';
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-const btn = document.querySelector('button');
-const gallery = document.querySelector('.gallery');
+export const lightbox = new SimpleLightbox('.gallery-link', {
+  captionsData: 'alt',
+  captionsDelay: 250,
+});
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -21,11 +24,12 @@ form.addEventListener('submit', event => {
       position: 'topRight',
       backgroundColor: '#ef4040',
       progressBar: false,
+      messageColor: '#fafafb',
     });
   } else {
     fetchImg()
       .then(img => renderImg(img))
-      .catch(erroe => console.log(error));
+      .catch(error => console.log(error));
   }
   form.reset();
 });

@@ -10,7 +10,7 @@ export function fetchImg() {
     orientation: 'horizontal',
     safesearch: true,
   });
-  fetch(`https://pixabay.com/api/?${options}`).then(response => {
+  return fetch(`https://pixabay.com/api/?${options}`).then(response => {
     if (!response.ok) {
       throw new Error(response.status);
     }
