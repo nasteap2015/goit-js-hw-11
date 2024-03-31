@@ -10,15 +10,17 @@ import { fetchImg } from './js/pixabay-api.js';
 import { renderImg } from './js/render-functions.js';
 
 const form = document.querySelector('form');
-const input = document.querySelector('input');
+export const input = document.querySelector('input');
+export const gallery = document.querySelector('.gallery');
 export const lightbox = new SimpleLightbox('.gallery-link', {
   captionsData: 'alt',
   captionsDelay: 250,
 });
+export const loader = document.querySelector('.loader');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  if (input.value === '') {
+  if (event.target.elements.keyword.value === '') {
     iziToast.error({
       message: 'Please enter key word',
       position: 'topRight',
@@ -26,10 +28,12 @@ form.addEventListener('submit', event => {
       progressBar: false,
       messageColor: '#fafafb',
     });
-  } else {
-    fetchImg()
-      .then(img => renderImg(img))
-      .catch(error => console.log(error));
+    console.log('check');
+    return;
   }
+  fetchImg()
+    .then(img => renderImg(img))
+    .catch(error => console.log(error));
+  console.log('check2');
   form.reset();
 });

@@ -5,10 +5,10 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { lightbox } from '../main.js';
 
 let markup = undefined;
-const gallery = document.querySelector('.gallery');
+import { gallery, loader } from '../main.js';
 
 export function renderImg(img) {
-  gallery.innerHTML = '';
+  loader.hidden = true;
   if (img.hits.length === 0) {
     iziToast.error({
       message:
