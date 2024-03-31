@@ -29,12 +29,9 @@ form.addEventListener('submit', event => {
       progressBar: false,
       messageColor: '#fafafb',
     });
-    console.log('check');
-    return;
   }
   fetchImg()
     .then(img => renderImg(img))
     .catch(error => console.log(error));
-  console.log('check2');
   form.reset();
 });
