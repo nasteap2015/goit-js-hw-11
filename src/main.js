@@ -29,6 +29,7 @@ form.addEventListener('submit', event => {
       progressBar: false,
       messageColor: '#fafafb',
     });
+    return;
   }
   fetchImg()
     .then(img => renderImg(img))
